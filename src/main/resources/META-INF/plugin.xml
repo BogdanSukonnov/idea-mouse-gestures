@@ -1,0 +1,25 @@
+<idea-plugin>
+    <id>io.github.bogdansukonnov.idea-mouse-gestures</id>
+    <name>Mouse gestures</name>
+    <vendor email="support@bogdansukonnov.github.io" url="https://bogdansukonnov.github.io/idea-mouse-gestures/">Bogdan
+        Sukonnov
+    </vendor>
+
+    <description><![CDATA[
+    Close tabs with gestures. Add your gestures and actions
+    http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <editorFactoryMouseMotionListener implementation="listener.ImgMouseMotionListenerJava"/>
+        <editorFactoryMouseListener implementation="listener.ImgMouseListenerJava"/>
+        <applicationService serviceImplementation="service.MouseGesturesService"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
