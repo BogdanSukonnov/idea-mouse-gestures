@@ -11,13 +11,13 @@ class MouseGesturesService {
             return
         if (!isGestureButton(event))
             clearGesture()
+//        RectanglePainter2D.FILL.paint()
     }
 
     fun mousePressed(event: EditorMouseEvent) {
 
         if (isGestureButton(event))
-
-            event.mouseEvent.button == 3
+            startGesture(event)
     }
 
     fun mouseClicked(event: EditorMouseEvent) {}
@@ -31,6 +31,13 @@ class MouseGesturesService {
     private fun clearGesture() {
         isGestureStarted = false;
         // TODO: clear gesture animation
+    }
+
+    private fun startGesture(event: EditorMouseEvent) {
+
+        clearGesture()
+
+        isGestureStarted = true
     }
 
     private fun isGestureButton(event: EditorMouseEvent): Boolean {
